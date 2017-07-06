@@ -1,0 +1,60 @@
+
+/* Latest Works
+================================================================ */
+
+.section.latest-works {
+
+/******************************************************************
+Start building the basic layout
+******************************************************************/
+
+	.portfolio-items {
+		transition: 0.4s;
+		transform: scale(1);
+	}
+	
+	.nav-carousel {		
+		transition-delay: 1s;
+	}
+
+	&.inactive {
+		.portfolio-items {
+			transform: scale(0);
+		}
+		.nav-carousel {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}	
+
+/******************************************************************
+Start building for smaller resolutions
+******************************************************************/
+
+	@media (max-width: $breakpoint-5) {
+		> .container {
+			position: relative;
+		}
+		.nav-carousel {
+			[class*="nav-"] {
+				top: auto;
+				bottom: -0.25rem;
+				transform: none;
+			}
+			.nav-prev {
+				left: 0;
+			}
+			.nav-next {
+				right: 0;
+			}
+		}
+	}
+
+/******************************************************************
+Start building for larger resolutions
+******************************************************************/
+
+	@media (min-width: $breakpoint-3) {
+	}
+
+} // end .section.latest-works

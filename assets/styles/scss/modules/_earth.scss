@@ -1,0 +1,98 @@
+
+/* Earth
+================================================================ */
+
+.earth {
+
+/******************************************************************
+Start building the basic layout
+******************************************************************/
+
+	padding-top: 7em;
+	height: 200px;
+	width: 70%;
+	overflow: hidden;
+	margin: auto;
+	position: relative;
+
+	img {
+		position: absolute;
+		left: 0;
+		animation-name: spin;
+		animation-duration: 35s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	.pin {
+		width: 55px;
+		height: 55px;
+		border-radius: 50% 50% 50% 0;
+		background: $brand-2;
+		transform: rotate(-45deg);
+		position: absolute;
+		top: 4em;
+		cursor: pointer;
+		transition: 0.4s;
+		&:after {
+			content: '';
+			width: 50%;
+			height: 50%;
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			border-radius: 50%;
+		}
+		&.active {
+			background: $brand-1;
+		}
+		&:nth-of-type(1) {
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+		&:nth-of-type(2) {
+			left: 12.5%;
+		}
+		&:nth-of-type(3) {
+			right: 12.5%;
+		}
+	}
+
+/******************************************************************
+Start building for larger resolutions
+******************************************************************/
+
+	@media (min-width: $breakpoint-3) {
+		height: 275px;
+		padding-top: 5em;
+		.pin {
+			top: auto;
+			&:nth-of-type(1) {
+				top: 15%;
+			}
+			&:nth-of-type(2) {
+				bottom: 25%;
+				transform: rotate(-90deg);
+			}
+			&:nth-of-type(3) {
+				bottom: 25%;
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+} // end .earth
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}

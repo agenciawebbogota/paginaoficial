@@ -1,0 +1,175 @@
+
+/* Dropdown Navigation
+   Used in: "modules/_main-nav.scss"
+================================================================ */
+
+ul {
+
+/******************************************************************
+Start building the basic layout
+******************************************************************/
+
+	@extend ul.reset;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s;
+	position: absolute;
+	z-index: 999;
+	min-width: 185px;
+	margin-top: 2.6em;
+	text-align: left;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: 400;
+	li {
+		display: block;
+		position: relative;
+		margin-left: 0;
+		a {
+			font-size: $font-size-0;
+			color: rgba(255,255,255,0.75);
+			background: rgba(0,0,0,0.86);
+			line-height: 3.2;
+			box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.05);
+			border-bottom: 1px solid rgba(0,0,0,0.5);
+			-webkit-backface-visibility: hidden;
+			&:before, 
+			&:after {
+				font-family: FontAwesome;	
+				transition: 0.4s;		
+			}
+			&:before {
+				content: "\f138";
+				margin-right: 0.75em;
+				display: inline-block;
+			}
+			&:after {
+				content: "\f105";
+				display: none;
+				position: absolute;
+				top: 0;
+				right: 1em;
+				color: rgba(255,255,255,0.3);
+			}
+			&:not(:only-child) {
+				padding-right: 2.75em !important;
+				&:after {				
+					display: inline;
+				}
+			}
+		}
+		&:hover {
+			a {
+				background: $brand-1;
+				color: $white;
+				box-shadow: none;
+				border-bottom-color: transparent;
+				&:before,
+				&:after {
+					color: $white;
+				}
+			}
+			> ul {
+				opacity: 1;
+				visibility: visible;
+				a {
+					border-bottom: 1px solid darken($brand-1, 5%);
+				}
+			}
+		}
+		&:first-child {
+			> a {
+				border-top: 8px solid darken($brand-1, 10%) !important;
+			}
+		}
+		&:last-child {
+			a {
+				border-bottom: none !important;
+				box-shadow: none;
+			}
+		}
+	}
+	// 2nd level and below
+	ul {
+		top: 0;
+		left: 150%;
+		left: calc(150% - 1px);
+		margin-left: -0.55em;
+		margin-top: 0;
+		border-radius: 0;
+		z-index: -1;
+		&:before, 
+		&:after {
+			display: none;
+		}
+		li {	
+			&:hover {
+				a {
+					background: darken($brand-1, 15%);
+					border-bottom-color: transparent;
+				}
+			}
+			&:first-child {
+				a {
+					border-top: none;
+				}
+			}	
+		}
+		// 3d level and below
+		ul {
+			left: 149.5%;
+			left: calc(150% - 1px);
+			li {
+				&:hover {
+					a {
+						background: darken($brand-1, 25%);
+					}
+				}
+			}
+		}
+	}
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+	}
+	&:before {
+		height: 20px;
+		top: -20px;
+		width: 100%;
+	}
+	&:after {
+		height: 10px;
+		width: 10px;
+		background: darken($brand-1, 10%);
+		transform: rotate(45deg);
+		top: -5px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+} // end dropdown ul
+
+&:hover > ul {
+	opacity: 1;
+	visibility: visible;
+	margin-top: 1rem;
+}
+
+// there will be a much better way of doing this lol
+> ul {
+	> li {
+		&:not(:first-child) {
+			ul {
+				li {					
+					&:first-child {
+						> a {
+							border-top: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
