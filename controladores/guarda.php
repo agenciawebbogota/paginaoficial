@@ -10,17 +10,12 @@
 		///////Insertar datos en la base de datos con nombre agenciaw_landing/////
 		$db = new conexion();
 		// $q = "INSERT INTO `registrospaginaprincipalawb` (`id`, `nombre`, `apellido`, `telefono`, `correo`, `mensaje`,`cargado` ) VALUES (NULL, '$nombre', '$apellido', '$telefono', '$correo','$mensaje', CURRENT_TIMESTAMP)";
-
-
 		$q = "INSERT INTO `registrospaginaprincipalawb` (`id`, `nombre`, `apellido`, `telefono`, `correo`, `mensaje`, `cargado`) VALUES (NULL, '$nombre', '$apellido', '$telefono', '$correo', '$mensaje', CURRENT_TIMESTAMP)";
 		$db->abc($q);
 		///////// Enviar email ///////
 		require_once('correo.php');
 		print(enviaEmail($nombre, $apellido, $telefono, $correo,$mensaje));
 	}else{
-		header("../index.html");
+		header("location: ../");
 	}
-	
-
-	
  ?>

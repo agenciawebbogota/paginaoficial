@@ -74,7 +74,4 @@
 		    return true;
 		}
 	}
-
-// enviaEmail("Luis", "Raga", "3127049308", "whary11@gmail.com");
-
  ?>
