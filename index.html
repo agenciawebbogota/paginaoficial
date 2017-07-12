@@ -1,10 +1,5 @@
 hola
 <!DOCTYPE html>
-<!--[if IE 8]>     <html class="no-js ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>     <html class="no-js ie ie9 lte9"> <![endif]-->
-<!--[if gt IE 9]>  <html class="no-js"> <![endif]-->
-<!--[if !IE]><!--> <html class="no-js"> <!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,10 +12,6 @@ hola
     <!-- Icons & favicons -->
     <link rel="apple-touch-icon" href="assets/images/apple-icon-touch.png">
     <link rel="icon" href="assets/images/favicon.png">
-    <!--[if IE]>
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <![endif]-->
-
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/styles/css/app.css">
     <link rel="stylesheet" class="color-switcher" href="assets/styles/css/app.css">
@@ -553,22 +544,22 @@ hola
                 </div>
                 <p>Tenemos todo preparado para comenzar a trabajar en su proyecto</p>
             </header>
-                <form class="h5-valid">
+        <form class="h5-valid" id="form-registro">
             <fieldset>
                 <div class="form-element">
-                    <input type="text" class="box" required>
+                    <input type="text" class="box" required name="nombre">
                     <label>Nombre</label>
                 </div>
                 <div class="form-element">
-                    <input type="text" class="box">
+                    <input type="text" class="box" name="apellido">
                     <label>Apellido</label>
                 </div>
                 <div class="form-element">
-                    <input type="tel" class="box">
+                    <input type="tel" class="box" name="telefono">
                     <label>Teléfono de Contacto</label>
                 </div>
                 <div class="form-element">
-                    <input type="email" class="box" required>
+                    <input type="email" class="box" required name="correo">
                     <label>Correo Electrónico</label>
                 </div>
             </fieldset>
@@ -810,6 +801,7 @@ hola
     <!-- General -->
 
     <script src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/form-registro.js"></script>
     <script src="assets/js/homepage.js"></script>
     
 </body>
