@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -18,6 +17,9 @@
     
     <!-- Modernizr -->
     <script src="assets/js/modernizr.min.js"></script>
+     <?php 
+        require_once 'includes/analitics.php';
+     ?>
 </head>
 <body class="further portfolio single-project">
 

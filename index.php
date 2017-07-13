@@ -33,6 +33,9 @@
     
     <!-- Modernizr -->
     <script src="assets/js/modernizr.min.js"></script>
+    <?php 
+        require_once 'includes/analitics.php';
+     ?>
 </head>
 <body class="index index-single parallax-title">
 
