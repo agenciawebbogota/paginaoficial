@@ -1,8 +1,15 @@
+
+
+
+
+
 <!DOCTYPE html>
+<html lang="es">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Language" content="es">
+    <!-- <meta http-equiv="Content-Language" content="es"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -36,6 +43,7 @@
     <?php 
         require_once 'includes/analitics.php';
      ?>
+     <script type="text/javascript" src="assets/js/schema.js"></script>
 </head>
 <body class="index index-single parallax-title">
 
@@ -381,7 +389,7 @@
             <div class="span-4 team-member">
                 <div class="team-pic">
                     <div class="mask"></div>
-                    <img src="assets/images/Luis Fernando Raga - Desarrollador Web.JPG" alt="Desarrollador Web Agencia Web Bogotá" title="Luis Fernando Raga Renteria" />
+                    <img src="assets/images/Luis_Fernando_ Raga _Desarrollador Web.png" exp alt="Desarrollador Web Agencia Web Bogotá" title="Luis Fernando Raga Renteria" />
                     <!-- 800x543 -->
                 </div>
                 <h4>Luis Fernando Raga</h4>
